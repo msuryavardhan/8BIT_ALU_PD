@@ -1,0 +1,27 @@
+# Simulation-generated files
+a.out
+simulation.vvp
+*.vcd
+*.vvp
+
+# Temporary/editor files
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OpenROAD/KLayout temporary databases and logs
+*.log
+*.tmp
+*.bak
+
+# Temporary DRC/LVS databases
+*.lyrdb
+*.lvsdb
+
+# Keep final design artifacts explicitly tracked
+!results/rv8_alu_final.gds
+!results/rv8_alu_final.def
+!results/rv8_alu_postroute.def
+!results/rv8_alu_postroute.v
+!results/rv8_alu.spef
