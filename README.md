@@ -1,4 +1,4 @@
-﻿# 8-Bit ALU — RTL to GDSII ASIC Implementation
+# 8-Bit ALU - RTL to GDSII ASIC Implementation
 
 An 8-bit registered ALU implemented through a complete RTL-to-GDSII digital ASIC flow using open-source EDA tools and the Nangate45 standard-cell library.
 
@@ -6,7 +6,7 @@ An 8-bit registered ALU implemented through a complete RTL-to-GDSII digital ASIC
 
 This project implements an 8-bit RISC-V-inspired Arithmetic Logic Unit (ALU) and demonstrates the complete digital ASIC implementation flow:
 
-**RTL â†’ Simulation â†’ Synthesis â†’ Floorplanning â†’ Placement â†’ Clock Tree Synthesis â†’ Routing â†’ Parasitic Extraction â†’ Post-Route STA â†’ GDSII**
+**RTL -> Simulation -> Synthesis -> Floorplanning -> Placement -> Clock Tree Synthesis -> Routing -> Parasitic Extraction -> Post-Route STA -> GDSII**
 
 The design was implemented and physically realized using open-source EDA tools with the Nangate45 standard-cell technology.
 
@@ -30,7 +30,7 @@ Status flags: Zero, Carry, Overflow, Negative.
 The design uses a registered datapath:
 
 ```text
-Input FF â†’ Combinational 8-bit ALU Logic â†’ Output FF
+Input FF -> Combinational 8-bit ALU Logic -> Output FF
 ```
 
 Supported operations are ADD, SUB, AND, OR, XOR, SLL, SRL and SLT.
@@ -68,23 +68,23 @@ The synthesized netlist was implemented using **OpenROAD**:
 
 ```text
 Floorplan
-   â†“
+   |
 I/O Pin Placement
-   â†“
+   |
 Global Placement
-   â†“
+   |
 Detailed Placement
-   â†“
+   |
 Clock Tree Synthesis
-   â†“
+   |
 Global Routing
-   â†“
+   |
 Detailed Routing
-   â†“
+   |
 Parasitic Extraction
-   â†“
+   |
 Post-Route STA
-   â†“
+   |
 GDSII Stream-Out
 ```
 
@@ -92,9 +92,9 @@ GDSII Stream-Out
 
 | Metric | Result |
 |---|---:|
-| Die width | 32.5 Âµm |
-| Die height | 32.5 Âµm |
-| Core area | ~753 ÂµmÂ² |
+| Die width | 32.5 um |
+| Die height | 32.5 um |
+| Core area | ~753 um^2 |
 | Target utilization | 50% |
 
 ### Placement
@@ -165,11 +165,11 @@ The implemented design is timing-clean under the applied constraints.
 | Metric | Result |
 |---|---:|
 | Technology | Nangate45 |
-| Die size | 32.5 Ã— 32.5 Âµm |
-| Core area | ~753 ÂµmÂ² |
-| Standard-cell design area | ~415 ÂµmÂ² |
+| Die size | 32.5 x 32.5 um |
+| Core area | ~753 um^2 |
+| Standard-cell design area | ~415 um^2 |
 | Reported utilization | ~55% |
-| Routed wire length | ~2483 Âµm |
+| Routed wire length | ~2483 um |
 | Routing violations | 0 |
 | Antenna net violations | 0 |
 | Worst setup slack | +8.86 ns |
@@ -239,10 +239,10 @@ A defensible power analysis will be performed after establishing correct gate-le
 
 | PPA Metric | Current Status |
 |---|---|
-| Area | âœ… ~415 ÂµmÂ² |
-| Performance | âœ… +8.86 ns worst setup slack |
-| Hold timing | âœ… +0.13 ns worst hold slack |
-| Power | â³ Pending valid activity analysis |
+| Area | [OK] ~415 um^2 |
+| Performance | [OK] +8.86 ns worst setup slack |
+| Hold timing | [OK] +0.13 ns worst hold slack |
+| Power | [PENDING] Pending valid activity analysis |
 
 ## Tools Used
 
@@ -262,24 +262,24 @@ A defensible power analysis will be performed after establishing correct gate-le
 
 ```text
 8BIT_ALU_PD/
-â”œâ”€â”€ .gitignore
-â”œâ”€â”€ README.md
-â”œâ”€â”€ rtl/
-â”‚   â””â”€â”€ rv8_alu.v
-â”œâ”€â”€ tb/
-â”‚   â””â”€â”€ rv8_alu_tb.v
-â”œâ”€â”€ constraints/
-â”‚   â””â”€â”€ rv8_alu.sdc
-â”œâ”€â”€ synthesis/
-â”‚   â””â”€â”€ rv8_alu_synth.v
-â””â”€â”€ results/
-    â”œâ”€â”€ rv8_alu_final.gds
-    â”œâ”€â”€ rv8_alu_final.def
-    â”œâ”€â”€ rv8_alu_gds.def
-    â”œâ”€â”€ rv8_alu_postroute.def
-    â”œâ”€â”€ rv8_alu_postroute.v
-    â”œâ”€â”€ rv8_alu.spef
-    â””â”€â”€ screenshots/
++-- .gitignore
++-- README.md
++-- rtl/
+|   +-- rv8_alu.v
++-- tb/
+|   +-- rv8_alu_tb.v
++-- constraints/
+|   +-- rv8_alu.sdc
++-- synthesis/
+|   +-- rv8_alu_synth.v
++-- results/
+    +-- rv8_alu_final.gds
+    +-- rv8_alu_final.def
+    +-- rv8_alu_gds.def
+    +-- rv8_alu_postroute.def
+    +-- rv8_alu_postroute.v
+    +-- rv8_alu.spef
+    +-- screenshots/
 ```
 
 ## Reproducibility
@@ -308,19 +308,19 @@ The flow uses the Nangate45 standard-cell technology files and open-source EDA t
 
 | Stage | Status |
 |---|---|
-| RTL design | âœ… Complete |
-| RTL simulation | âœ… Complete |
-| Synthesis | âœ… Complete |
-| Floorplanning | âœ… Complete |
-| Placement | âœ… Complete |
-| Clock Tree Synthesis | âœ… Complete |
-| Routing | âœ… Complete |
-| Parasitic extraction | âœ… Complete |
-| Post-route STA | âœ… Complete |
-| GDSII generation | âœ… Complete |
-| DRC | âš ï¸ Under investigation |
-| LVS | â³ Pending |
-| PPA | â³ Power analysis pending |
+| RTL design | [OK] Complete |
+| RTL simulation | [OK] Complete |
+| Synthesis | [OK] Complete |
+| Floorplanning | [OK] Complete |
+| Placement | [OK] Complete |
+| Clock Tree Synthesis | [OK] Complete |
+| Routing | [OK] Complete |
+| Parasitic extraction | [OK] Complete |
+| Post-route STA | [OK] Complete |
+| GDSII generation | [OK] Complete |
+| DRC | [WARNING] Under investigation |
+| LVS | [PENDING] Pending |
+| PPA | [PENDING] Power analysis pending |
 
 ## Future Work
 
@@ -337,4 +337,3 @@ The flow uses the Nangate45 standard-cell technology files and open-source EDA t
 **Manchikanti Surya Vardhan**
 
 This project demonstrates practical experience across RTL design, functional verification, synthesis, physical implementation, static timing analysis and GDSII generation using open-source ASIC design tools.
-
